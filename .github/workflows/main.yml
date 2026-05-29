@@ -1,9 +1,7 @@
-
 name: A Basic Workflow
 
 on:
-
-  push: 
+  push:
     branches: ["main"]
 
   pull_request:
@@ -11,13 +9,10 @@ on:
 
   workflow_dispatch:
 
-
-
-jobs: 
-      
-  build-app: 
+jobs:
+  build-app:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - uses: actions/checkout@v3
 
       - name: Run a one-line script
@@ -28,21 +23,19 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-
   build-api:
     runs-on: windows-latest
     steps:
       - run: echo "Building api"
 
-
   build-db:
     needs: build-app
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello Windows"
+      - run: echo "Hello Ubuntu"
 
-  package: 
+  package:
     needs: [build-app, build-db]
     runs-on: self-hosted
     steps:
-      - run: echo "Hello MacOS"
+      - run: echo "Packaging application"
