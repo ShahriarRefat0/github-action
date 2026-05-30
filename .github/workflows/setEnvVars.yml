@@ -1,6 +1,6 @@
 name: 'custom GITHUB_ENV var Demo'
 
-on: wordkflow_dispatch
+on: workflow_dispatch
 
 jobs:
   custom GITHUB_ENV:
