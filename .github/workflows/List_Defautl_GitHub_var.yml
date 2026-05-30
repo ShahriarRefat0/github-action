@@ -1,0 +1,20 @@
+name: List All defautl Github Vars
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  ubuntu-enviroment:
+    runs-on: ubuntu-latest
+    steps:
+    - run: env
+
+  windows-environment:
+    runs-on: windows-latest
+    steps:
+    - run: env
+
+  macos-environment:
+    runs-on: macos-latest
+    steps:
+    - run: env
