@@ -6,6 +6,7 @@ on:
 env:
   DAY_OF_WEEK: Funday
   testvar: value-1
+  TOP_SECRET: i-am-to-secret..please-dont-tell-anyone
 
 jobs:
   mainjob:
