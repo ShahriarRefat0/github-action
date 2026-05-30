@@ -1,0 +1,16 @@
+name: 'custom GITHUB_ENV var Demo'
+
+on: wordkflow_dispatch
+
+jobs:
+  custom GITHUB_ENV var Demo:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set the value
+      id: setp_one
+      run: |
+        echo "action_state=yellow" >> $GITHUB_ENV
+
+    - name: Use the value
+      id: step_two
+      run: echo "${{env.action_state}}" #this will output 'yellow'
